@@ -1,0 +1,4 @@
+node_modules
+
+# Файлы в этом каталоге создаются webpack'ом
+dist
