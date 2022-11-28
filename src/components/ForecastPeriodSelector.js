@@ -1,6 +1,7 @@
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
+import ForecastWeek from './ForecastWeek';
 
 function ForecastPeriodSelector() {
     return (
@@ -16,7 +17,7 @@ function ForecastPeriodSelector() {
                 <p>Погода на два дня</p>
             </Tab>
             <Tab eventKey="week" title="Неделя">
-                <p>Погода на неделю</p>
+                <ForecastWeek />
             </Tab>
         </Tabs>
     );
