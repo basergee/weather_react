@@ -11,11 +11,9 @@ function ForecastPeriodSelector(props) {
         className="mb-3"
         >
             <Tab eventKey="oneday" title="1 день">
-                <p>Погода на час</p>
                 <ForecastWeek city={props.city} daysForward={1}/>
             </Tab>
             <Tab eventKey="twodays" title="2 дня">
-                <p>Погода на два дня</p>
                 <ForecastWeek city={props.city} daysForward={2}/>
             </Tab>
             <Tab eventKey="fivedays" title="5 дней">
