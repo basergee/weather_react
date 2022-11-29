@@ -3,7 +3,7 @@ import Tabs from 'react-bootstrap/Tabs';
 
 import ForecastWeek from './ForecastWeek';
 
-function ForecastPeriodSelector() {
+function ForecastPeriodSelector(props) {
     return (
         <Tabs
         defaultActiveKey="hour"
@@ -17,7 +17,7 @@ function ForecastPeriodSelector() {
                 <p>Погода на два дня</p>
             </Tab>
             <Tab eventKey="week" title="Неделя">
-                <ForecastWeek city='Moscow'/>
+                <ForecastWeek city={props.city}/>
             </Tab>
         </Tabs>
     );
