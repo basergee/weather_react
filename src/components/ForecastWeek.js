@@ -31,8 +31,7 @@ class ForecastWeek extends React.Component {
 
     render() {
         let someDate = new Date();
-        let numberOfDaysToAdd = this.props.daysForward;
-        let result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+        let result = someDate.setDate(someDate.getDate() + this.props.daysForward);
         let endDate = new Date(result);
 
         // Отбрасываем секунды и миллисекунды, чтобы привести время к одному
