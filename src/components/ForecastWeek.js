@@ -14,7 +14,7 @@ class ForecastWeek extends React.Component {
 
     componentDidMount() {
         const apikey = process.env.REACT_APP_OPWEATHER_APIKEY;
-        const city = 'London';
+        const city = this.props.city;
         const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${apikey}&units=metric`;
 
         axios.get(url)

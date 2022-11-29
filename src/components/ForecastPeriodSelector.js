@@ -17,7 +17,7 @@ function ForecastPeriodSelector() {
                 <p>Погода на два дня</p>
             </Tab>
             <Tab eventKey="week" title="Неделя">
-                <ForecastWeek />
+                <ForecastWeek city='Moscow'/>
             </Tab>
         </Tabs>
     );
