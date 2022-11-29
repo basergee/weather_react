@@ -32,7 +32,6 @@ class ForecastWeek extends React.Component {
     render() {
         return (
             <>
-                <p>{console.log(this.state.weather.list)}Погода на неделю</p>
                 <ul>
                 {
                     this.state.weather.list.map(forecast =>
