@@ -30,14 +30,26 @@ class ForecastWeek extends React.Component {
     }
 
     render() {
+        let someDate = new Date();
+        let numberOfDaysToAdd = this.props.daysForward;
+        let result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd);
+        let endDate = new Date(result);
+
+        // Отбрасываем секунды и миллисекунды, чтобы привести время к одному
+        // формату, потому что в данных прогноза от сервера их нет.
+        endDate = new Date(endDate.setSeconds(0, 0) / 1000);
+
         return (
             <>
                 <ul>
                 {
-                    this.state.weather.list.map(forecast =>
-                        <li key={forecast.dt}>{forecast.dt_txt + ' -> ' +
-                            forecast.main.temp}</li>
-                    )
+                    this.state.weather.list.map(forecast => {
+                        // Выводим прогноз только на заданное количество дней
+                        if (forecast.dt < endDate.getTime()) {
+                            return <li key={forecast.dt}>{forecast.dt_txt + ' -> ' +
+                                forecast.main.temp}</li>;
+                        }
+                    })
                 }
                 </ul>
             </>
