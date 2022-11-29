@@ -12,19 +12,21 @@ class ForecastWeek extends React.Component {
         };
     }
 
-    componentDidMount() {
-        const apikey = process.env.REACT_APP_OPWEATHER_APIKEY;
-        const city = this.props.city;
-        const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${apikey}&units=metric`;
+    componentDidUpdate(prevProps) {
+        if (this.props.city !== prevProps.city) {
+            const apikey = process.env.REACT_APP_OPWEATHER_APIKEY;
+            const city = this.props.city;
+            const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=${apikey}&units=metric`;
 
-        axios.get(url)
-            .then(res => {
-                const weather = res.data;
-                this.setState({ weather });
-            })
-            .catch(error => {
-                console.log(error.response.statusText);
-            });
+            axios.get(url)
+                .then(res => {
+                    const weather = res.data;
+                    this.setState({ weather });
+                })
+                .catch(error => {
+                    console.log(error.response.statusText);
+                });
+        }
     }
 
     render() {
