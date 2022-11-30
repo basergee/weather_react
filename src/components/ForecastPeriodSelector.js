@@ -3,6 +3,15 @@ import Tabs from 'react-bootstrap/Tabs';
 
 import ForecastWeek from './ForecastWeek';
 
+
+/*
+Компонент ForecastPeriodSelector позволяет пользователю выбрать количество
+ближайших дней, на которое отображаются данные о погоде в выбранном городе.
+
+Компонент ожидает следующие props.
+
+  city          --  город, для которого выводятся данные о погоде
+*/
 function ForecastPeriodSelector(props) {
     return (
         <Tabs
