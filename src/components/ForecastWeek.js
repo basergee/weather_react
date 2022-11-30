@@ -3,6 +3,17 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
 
+/*
+Компонент ForecastWeek запрашивает и выводит в виде таблицы данные о 
+температуре воздуха на несколько ближайших дней в выбраном городе.
+
+Компонент ожидает следующие props.
+
+  city          --  город, для которого выводятся данные о температуре
+
+  daysForward   --  количество дней от сегодняшней даты, на которые выводится
+                    прогноз. Ожидается, что это положительное число не больше 5
+*/
 class ForecastWeek extends React.Component {
     constructor(props) {
         super(props);
