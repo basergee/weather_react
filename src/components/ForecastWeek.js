@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Table from 'react-bootstrap/Table';
 
 
 class ForecastWeek extends React.Component {
@@ -40,17 +41,29 @@ class ForecastWeek extends React.Component {
 
         return (
             <>
-                <ul>
-                {
-                    this.state.weather.list.map(forecast => {
-                        // Выводим прогноз только на заданное количество дней
-                        if (forecast.dt < endDate.getTime()) {
-                            return <li key={forecast.dt}>{forecast.dt_txt + ' -> ' +
-                                forecast.main.temp}</li>;
-                        }
-                    })
-                }
-                </ul>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>Время</th>
+                            <th>Температура, С</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        this.state.weather.list.map(forecast => {
+                            // Выводим прогноз только на заданное количество дней
+                            if (forecast.dt < endDate.getTime()) {
+                                return (
+                                    <tr>
+                                        <td key={forecast.dt}>{forecast.dt_txt}</td>
+                                        <td>{forecast.main.temp}</td>
+                                    </tr>
+                                );
+                            }
+                        })
+                    }
+                    </tbody>
+                </Table>
             </>
         );
     }
