@@ -15,7 +15,7 @@ import ForecastWeek from './ForecastWeek';
 function ForecastPeriodSelector(props) {
     return (
         <Tabs
-        defaultActiveKey="hour"
+        defaultActiveKey="oneday"
         id="forecast-period-selector"
         className="mb-3"
         >
