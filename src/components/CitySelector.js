@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 
 
+/*
+Компонент CitySelector позволяет пользователю выбрать город из списка городов.
+
+Компонент ожидает следующие props.
+
+  onCitySelect(selectedCity)  --  функция обратного вызова, которой в параметре
+                                  selectedCity передается название города,
+                                  выбранного пользователем в списке городов
+*/
 function CitySelector(props) {
     const arOptions = ['Москва', 'Санкт-Петербург', 'Екатеринбург', 'Лондон'];
     const [cityIdx, setValue] = useState('');
